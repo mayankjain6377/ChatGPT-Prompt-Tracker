@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Claude Prompt Tracker",
+  "version": "1.0",
+  "description": "Tracks your Claude prompts and lets you jump to any one instantly.",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": ["https://claude.ai/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://claude.ai/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
